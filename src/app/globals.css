@@ -1,0 +1,427 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b1120;
+  --foreground: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(99, 102, 241, 0.07),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 35%,
+      rgba(59, 130, 246, 0.05),
+      transparent 30%
+    ),
+    #0b1120;
+  color: var(--foreground);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.25);
+  color: #ffffff;
+}
+
+/* ---------------------------------
+   MAIN CONTAINER
+--------------------------------- */
+
+.section-shell {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+/* ---------------------------------
+   HERO BACKGROUND
+--------------------------------- */
+
+.hero-grid {
+  background-image:
+    linear-gradient(
+      rgba(148, 163, 184, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 60px 60px;
+}
+
+/* ---------------------------------
+   TEXT
+--------------------------------- */
+
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    #a5b4fc 0%,
+    #818cf8 45%,
+    #60a5fa 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-link {
+  position: relative;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #e2e8f0;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 1px;
+  background: #818cf8;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ---------------------------------
+   BUTTONS
+--------------------------------- */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.14);
+  padding: 11px 20px;
+  color: #e0e7ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: rgba(99, 102, 241, 0.22);
+  border-color: rgba(129, 140, 248, 0.55);
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 30px rgba(30, 41, 59, 0.35),
+    0 0 25px rgba(99, 102, 241, 0.08);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 11px 20px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(148, 163, 184, 0.25);
+  color: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------
+   CHIPS
+--------------------------------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(148, 163, 184, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 7px 11px;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.chip:hover {
+  background: rgba(99, 102, 241, 0.07);
+  border-color: rgba(129, 140, 248, 0.18);
+  color: #cbd5e1;
+}
+
+/* ---------------------------------
+   ICON BOX
+--------------------------------- */
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(129, 140, 248, 0.14);
+  border-radius: 14px;
+  background: rgba(99, 102, 241, 0.07);
+  color: #a5b4fc;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.icon-box:hover {
+  background: rgba(99, 102, 241, 0.11);
+  border-color: rgba(129, 140, 248, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------
+   GLASS CARDS
+--------------------------------- */
+
+.glass-card {
+  border: 1px solid rgba(148, 163, 184, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(129, 140, 248, 0.18);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow:
+    0 15px 45px rgba(2, 6, 23, 0.25);
+}
+
+/* ---------------------------------
+   PROJECT CARDS
+--------------------------------- */
+
+.project-card {
+  border: 1px solid rgba(148, 163, 184, 0.09);
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.018)
+    );
+  padding: 30px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(129, 140, 248, 0.18);
+  box-shadow:
+    0 20px 50px rgba(2, 6, 23, 0.30);
+}
+
+/* ---------------------------------
+   CONTACT CARD
+--------------------------------- */
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(129, 140, 248, 0.13);
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(99, 102, 241, 0.08),
+      transparent 35%
+    ),
+    rgba(255, 255, 255, 0.025);
+  padding: 48px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: -150px;
+  right: -100px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.06);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* ---------------------------------
+   PROFILE PHOTO
+--------------------------------- */
+
+.profile-photo {
+  border: 4px solid rgba(129, 140, 248, 0.20);
+  box-shadow:
+    0 20px 50px rgba(2, 6, 23, 0.35),
+    0 0 35px rgba(99, 102, 241, 0.08);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: translateY(-4px);
+  border-color: rgba(129, 140, 248, 0.35);
+  box-shadow:
+    0 25px 60px rgba(2, 6, 23, 0.40),
+    0 0 40px rgba(99, 102, 241, 0.12);
+}
+
+/* ---------------------------------
+   SCROLLBAR
+--------------------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.35);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(129, 140, 248, 0.40);
+}
+
+/* ---------------------------------
+   RESPONSIVE
+--------------------------------- */
+
+@media (max-width: 768px) {
+  .section-shell {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .section-pad {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .contact-card {
+    padding: 30px 24px;
+  }
+
+  .project-card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-shell {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .section-pad {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .hero-grid {
+    background-size: 40px 40px;
+  }
+}
+
+/* ---------------------------------
+   REDUCE MOTION
+--------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
